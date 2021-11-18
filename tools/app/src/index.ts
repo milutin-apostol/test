@@ -18,7 +18,7 @@ app.get("/", async (req, res) => {
 
         await git.add('./../../*').commit("first commit!").push('origin', 'master');
 
-        res.send("Done");
+        res.send("Done"); 
     }
     catch (e) {
         res.status(500).send(e.message);
