@@ -10,6 +10,12 @@ const git: SimpleGit = simpleGit();
 // Define a route handler for the default home page
 app.get("/", async (req, res) => {
     try {
+
+        await git.pull("origin", 'master');
+
+        // tslint:disable-next-line:no-console
+        console.log(`1`);
+
         await git.add('./../../*').commit("first commit!").push('origin', 'master');
 
         res.send("Done");
